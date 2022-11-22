@@ -6,9 +6,12 @@
 }
 
 int randomNumber = GetRandomNumberInRange(100, 999);
- 
-int threeDigitNumber = randomNumber;
-string stringNumber = Convert.ToString(threeDigitNumber);
 
-Console.WriteLine($"Трехзначное число {randomNumber} вторая цифра этого числа является {stringNumber[1]}");
-    
+int threeDigitNumber(int number)
+{
+    int intEnd = (randomNumber % 100) / 10;
+    return intEnd;
+}
+
+int maxDigit = threeDigitNumber (randomNumber);
+Console.WriteLine($"Трехзначное число {randomNumber} вторым числом является {maxDigit}");
