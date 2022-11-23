@@ -5,14 +5,26 @@
     return result;
 }
 
-int randomNumber = GetRandomNumberInRange(10, 999);
+int randomNumber = GetRandomNumberInRange(10, 9999);// менять диапазон можно 
+Console.WriteLine(randomNumber);
+int count = randomNumber.ToString().Length;
+Console.WriteLine(MakeArray(randomNumber, count));
 
-int threeDigitNumber(int number)
+int MakeArray(int a, int b)
 {
-    int intEnd = (randomNumber % 100) / 10;
-    return intEnd;
+    int result = 0;
+    if (b < 3)
+    {
+        Console.WriteLine("Третьей цифры нет");
+    }
+    else
+    {
+        int c = 1;
+        for (int i = b; i > 3; i--)
+        {
+            c = c * 10;
+        }
+        result = (a / c) % 10;
+    }
+return result;
 }
-
-int maxDigit = threeDigitNumber (randomNumber);
-Console.WriteLine($"Число {randomNumber} третьим числом является {maxDigit}");
-
